@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Assertions;
 
 public class WaypointWalker : MonoBehaviour
 {
@@ -7,13 +8,11 @@ public class WaypointWalker : MonoBehaviour
     WaypointGroup waypoints;
 
     [SerializeField]
-    WaypointWalkerOption options;
+    [Range(0.001f, 1)]
+    float distanceToReach = 0.05f;
 
     [SerializeField]
     float movementSpeed;
-
-    [SerializeField]
-    bool pause = false;
 
 #pragma warning restore 0649
 
@@ -22,16 +21,16 @@ public class WaypointWalker : MonoBehaviour
     bool reachedEnd = false;
     int waypointIndex = 0;
 
-    private void Update()
+    private void Start()
     {
-        if(pause)
-        {
-            return;
-        }
+        Assert.IsNotNull(waypoints, "Waypoint walker is missing a reference to a WaypointGroup and will not execute");
+    }
 
+    private void Update()
+    { 
         if(waypoints == null)
         {
-            return;
+            Assert.IsNotNull(waypoints, "Waypoint walker is missing a reference to a WaypointGroup and will not execute");
         }
 
         if(hasWaypoint)
@@ -53,7 +52,7 @@ public class WaypointWalker : MonoBehaviour
     private void CheckDistance()
     {
         var distance = Vector3.Distance(transform.position, waypoint);
-        if (distance < options.distanceToReach)
+        if (distance < distanceToReach)
         {
             if (reachedEnd)
             {

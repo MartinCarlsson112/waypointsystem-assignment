@@ -29,14 +29,12 @@ public class WaypointGroupInspector : Editor
             GUILayout.ExpandWidth(false),
             GUILayout.MaxWidth(25),
         };
-
     }
 
 
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
-
 
         if(GUILayout.Button(EDIT_BUTTON_NAME))
         {
@@ -50,6 +48,7 @@ public class WaypointGroupInspector : Editor
         {
             if (property.propertyType == SerializedPropertyType.Generic && property.isArray)
             {
+                //add button if the array is empty
                 if(property.arraySize < 1)
                 {
                     if (GUILayout.Button("+", buttonLayout))
