@@ -1,5 +1,4 @@
-﻿using System.Data.SqlTypes;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WaypointGroup : MonoBehaviour
 {

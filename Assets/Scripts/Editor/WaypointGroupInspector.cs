@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using UnityEditor;
-using UnityEditor.Graphs;
-using System;
 
 [CustomEditor(typeof(WaypointGroup))]
 public class WaypointGroupInspector : Editor
