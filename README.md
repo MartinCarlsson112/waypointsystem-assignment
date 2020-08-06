@@ -21,5 +21,5 @@ The WaypointGroup also supports looping waypoints.
 
 WaypointWalker
 
-Interacts with the WaypointGroup to get waypoints to move to. Walks between the waypoints, either goes back and forth through all the waypoints, or cycles through them (depending on the setting in the WaypointGroup) To use the WaypointWalker, a WaypointGroup must be set in reference field of the inspector. The WaypointWalker and WaypointGroup can either be on the same GameObject or on seperate GameObjects, allowing multiple entities to share the same waypoints.
+Interacts with the WaypointGroup to get waypoints to move to. Walks between the waypoints, either goes back and forth through all the waypoints, or cycles through them (depending on the setting in the WaypointGroup). To use the WaypointWalker, a WaypointGroup must be set in reference field of the inspector. The WaypointWalker and WaypointGroup can either be on the same GameObject or on seperate GameObjects, allowing multiple entities to share the same waypoints.
 
